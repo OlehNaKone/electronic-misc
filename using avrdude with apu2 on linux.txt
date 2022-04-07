@@ -1,0 +1,1 @@
+avrdude -C "/mnt/md0/software/installed electronic software/avrdude6.3/avrdude.conf" -c apu2 -b 19200 -v -p m88p -P usb:ft0

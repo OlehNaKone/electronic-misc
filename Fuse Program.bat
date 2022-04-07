@@ -1,0 +1,1 @@
+D:\radio\software\SinaProg\avrdude.exe -c apu_2 -P ft0 -B 115200 -p m8 -U hfuse:w:0xD9:m -U lfuse:w:0x84:m

@@ -1,0 +1,1 @@
+D:\radio\software\SinaProg\avrdude.exe -c apu_2 -P ft0 -B 115200 -p m8 -U eeprom:r:"D:\radio\current_projects\John Kramer Step-Down\11.txt":i
