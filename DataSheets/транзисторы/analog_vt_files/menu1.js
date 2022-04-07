@@ -1,0 +1,11 @@
+document.write('<a href="../index.html" target="_top">Главная</a> ');
+document.write('<a href="../XP/main.html">Windows XP</a> '); 
+document.write('<a href="../Softtrable/main.html">Софт</a> '); 
+document.write('<a href="../Hardtrable/main.html">Железо</a> ');
+document.write('<a href="../Radio/main.html">Радио</a> ');
+document.write('<a href="../Mobile/index.html">Мобильник</a> ');
+document.write('<a href="../meprog.html">Мои программы</a> ');
+document.write('<a href="../downloads.html">Downloads</a> | ');
+document.write('<a href="../Individual/main.html"><i>Личное</i></a>  | ');
+document.write('<a href="javascript:namylo(&quot;comprad&quot;,2,&quot;Comprad&quot;);">Е-mаil</a>');
+document.write('<hr>');
