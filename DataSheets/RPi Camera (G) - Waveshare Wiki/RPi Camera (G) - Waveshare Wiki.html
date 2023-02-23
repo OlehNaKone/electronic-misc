@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html class="client-js" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>RPi Camera (G) - Waveshare Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"bc8b3443225db8ad3f6a5e96","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"RPi_Camera_(G)","wgTitle":"RPi Camera (G)","wgCurRevisionId":52336,"wgRevisionId":52336,"wgArticleId":34,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["CSI interface","Modules"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"RPi_Camera_(G)","wgRelevantArticleId":34,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,
+"wgMediaViewerEnabledByDefault":!0};RLSTATE={"ext.gadget.tabber":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.toc.styles":"ready","skins.tweeki.styles":"ready","skins.tweeki.bootstraptheme.styles":"ready","skins.tweeki.externallinks.styles":"ready","skins.tweeki.awesome.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","mmv.head","mmv.bootstrap.autostart","ext.HighlightjsIntegration","skins.tweeki.messages","skins.tweeki.scripts"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/swlodo_003.css">
+<script async="" src="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/swlodo.es"></script>
+<style>
+.mw-ui-button{background-color:#f8f9fa;color:#202122;display:inline-block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;min-width:4em;max-width:28.75em;margin:0;padding:6px 12px;border:1px solid #a2a9b1;border-radius:2px;cursor:pointer;vertical-align:middle;font-family:inherit;font-size:1em;font-weight:bold;line-height:1.28571429em;text-align:center;-webkit-appearance:none}.mw-ui-button:visited{color:#202122}.mw-ui-button:hover{background-color:#ffffff;color:#404244;border-color:#a2a9b1}.mw-ui-button:focus{background-color:#ffffff;color:#202122;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;outline-width:0}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:active,.mw-ui-button.is-on{background-color:#c8ccd1;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#ffffff;border-color:#c8ccd1;cursor:default}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background-color:#c8ccd1;color:#ffffff;box-shadow:none;border-color:#c8ccd1}.mw-ui-button:not(:disabled){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;-moz-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button.mw-ui-quiet,.mw-ui-button.mw-ui-quiet.mw-ui-progressive,.mw-ui-button.mw-ui-quiet.mw-ui-destructive{background-color:transparent;color:#202122;border-color:transparent}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:hover{background-color:transparent;color:#404244;border-color:transparent;box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:active{background-color:transparent;color:#000000;border-color:transparent}.mw-ui-button.mw-ui-quiet:focus,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:focus,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:focus{background-color:transparent;color:#202122;border-color:transparent;box-shadow:none}.mw-ui-button.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled,.mw-ui-button.mw-ui-quiet:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-quiet:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:active{background-color:transparent;color:#72777d;border-color:transparent}.mw-ui-button.mw-ui-progressive{background-color:#3366cc;color:#fff;border:1px solid #3366cc}.mw-ui-button.mw-ui-progressive:hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-progressive.is-on{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet{color:#3366cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active{color:#2a4b8d}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-destructive{background-color:#dd3333;color:#fff;border:1px solid #dd3333}.mw-ui-button.mw-ui-destructive:hover{background-color:#ff4242;border-color:#ff4242}.mw-ui-button.mw-ui-destructive:focus{box-shadow:inset 0 0 0 1px #dd3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on{background-color:#b32424;border-color:#b32424;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#dd3333}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#ff4242}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active{color:#b32424}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#dd3333}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}input.mw-ui-button::-moz-focus-inner,button.mw-ui-button::-moz-focus-inner{margin-top:-1px;margin-bottom:-1px}a.mw-ui-button{text-decoration:none}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not(:first-child){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{position:relative;line-height:1.5em;min-height:1.5em;min-width:1.5em}span.mw-ui-icon{display:inline-block}.mw-ui-icon.mw-ui-icon-element{text-indent:-999px;overflow:hidden;width:3.5em;min-width:3.5em;max-width:3.5em}.mw-ui-icon.mw-ui-icon-element:before{left:0;right:0;position:absolute;margin:0 1em}.mw-ui-icon.mw-ui-icon-element.mw-ui-icon-large{width:4.625em;min-width:4.625em;max-width:4.625em;line-height:4.625em;min-height:4.625em}.mw-ui-icon.mw-ui-icon-element.mw-ui-icon-large:before{min-height:4.625em}.mw-ui-icon.mw-ui-icon-before:before,.mw-ui-icon.mw-ui-icon-element:before{background-position:50% 50%;background-repeat:no-repeat;background-size:100% auto;float:left;display:block;min-height:1.5em;content:''}.mw-ui-icon.mw-ui-icon-before:before{position:relative;width:1.5em;margin-right:1em}.mw-ui-icon.mw-ui-icon-small:before{background-size:66.67% auto}
+pre.code2highlight,pre.nohighlight{  padding:0.5em}code.code2highlight.hljs{  padding:1px 4px}.hljs{display:block;overflow-x:auto;padding:0.5em;background:#1E1E1E;color:#DCDCDC}.hljs-keyword,.hljs-literal,.hljs-symbol,.hljs-name{color:#569CD6}.hljs-link{color:#569CD6;text-decoration:underline}.hljs-built_in,.hljs-type{color:#4EC9B0}.hljs-number,.hljs-class{color:#B8D7A3}.hljs-string,.hljs-meta-string{color:#D69D85}.hljs-regexp,.hljs-template-tag{color:#9A5334}.hljs-subst,.hljs-function,.hljs-title,.hljs-params,.hljs-formula{color:#DCDCDC}.hljs-comment,.hljs-quote{color:#57A64A;font-style:italic}.hljs-doctag{color:#608B4E}.hljs-meta,.hljs-meta-keyword,.hljs-tag{color:#9B9B9B}.hljs-variable,.hljs-template-variable{color:#BD63C5}.hljs-attr,.hljs-attribute,.hljs-builtin-name{color:#9CDCFE}.hljs-section{color:gold}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-bullet,.hljs-selector-tag,.hljs-selector-id,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo{color:#D7BA7D}.hljs-addition{background-color:#144212;display:inline-block;width:100%}.hljs-deletion{background-color:#600;display:inline-block;width:100%}
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}</style><style>
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded.mw-ui-icon:before{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 768%22%3E %3Cpath d=%22M851.2 71.6L690.7 232.1l-40.1-40.3-9.6 164.8 164.8-9.3-40.3-40.4L926 146.4l58.5 58.5L997.6 0 792.7 13.1%22/%3E %3Cpath d=%22M769.6 89.3H611.9l70.9 70.8 7.9 7.5m-47.1 234.6l-51.2 3 3-51.2 9.4-164.4 5.8-100.3H26.4V768h883.1V387l-100.9 5.8-165 9.4zM813.9 678H113.6l207.2-270.2 31.5-12.9L548 599.8l105.9-63.2 159.8 140.8.2.6zm95.6-291.9V228l-79.1 78.9 7.8 7.9%22/%3E %3C/svg%3E")}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 768%22%3E %3Cpath d=%22M897 454.6V313.4L810.4 299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4 50.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427 85.6c-23.3 6.4-45.7 16-65.8 27.3l-71.4-50.5-100.3 99.5 50.5 71.4c-11.2 20.9-20.9 42.5-27.3 66.6L127 313.4v141.2l85.8 14.4c6.4 23.3 16 45.7 27.3 66.6L189.6 607l99.5 99.5 71.4-50.5c20.9 11.2 42.5 20.9 66.6 27.3l14.4 85.8h141.2l14.4-86.6c23.3-6.4 45.7-16 65.8-27.3l71.4 50.5 99.5-99.5-50.5-71.4c11.2-20.9 20.9-42.5 27.3-66.6l86.4-13.6zm-385 77c-81.8 0-147.6-66.6-147.6-147.6 0-81.8 66.6-147.6 147.6-147.6S659.6 302.2 659.6 384 593.8 531.6 512 531.6z%22/%3E %3C/svg%3E");opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before:hover{opacity:1}.mw-mmv-button{background-color:transparent;min-width:0;border:0;padding:0;overflow-x:hidden;text-indent:-9999em}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/swlodo.css">
+<link rel="stylesheet" href="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/swlodo_002.css">
+<meta name="generator" content="MediaWiki 1.35.5">
+<meta property="og:image" content="https://www.waveshare.com/w/upload/0/0f/RPi-Camera-G-1.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://www.waveshare.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.waveshare.com/w/opensearch_desc.php" title="Waveshare Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.waveshare.com/w/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Waveshare Wiki Atom feed" href="https://www.waveshare.com/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-RPi_Camera_G rootpage-RPi_Camera_G skin-tweeki action-view tweeki-animateLayout tweeki-non-advanced tweeki-user-anon" style="margin-bottom: 0px; position: relative;">			<!-- navbar -->
+			<div id="mw-navigation" class="navbar navbar-default navbar-fixed-top navbar-expand-lg fixed-top navbar-light bg-light" role="navigation">
+				<h2>Navigation menu</h2>
+				<div id="mw-head" class="navbar-inner">
+					<div class="container">
+
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							<a href="https://www.waveshare.com/wiki/Main_Page" class="navbar-brand"><img src="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/Ws-watermark-en.svg" alt="Waveshare Wiki"></a>
+						</div>
+
+						<div id="navbar" class="navbar-collapse collapse">
+													<ul class="nav navbar-nav">
+							<li class="nav open"><a href="#" id="n-raspberry-pi" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Raspberry Pi <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523rpi-boards"><a href="https://www.waveshare.com/wiki/Main_Page#RPi-Boards" tabindex="-1">Boards/Kits</a></li><li id="n-main_page.2523rpi-displays"><a href="https://www.waveshare.com/wiki/Main_Page#RPi-Displays" tabindex="-1">Displays</a></li><li id="n-main_page.2523rpi-cameras"><a href="https://www.waveshare.com/wiki/Main_Page#RPi-Cameras" tabindex="-1">Cameras</a></li><li id="n-main_page.2523rpi-expansions"><a href="https://www.waveshare.com/wiki/Main_Page#RPi-Expansions" tabindex="-1">Expansions</a></li><li id="n-main_page.2523rpi-laptops"><a href="https://www.waveshare.com/wiki/Main_Page#RPi-Laptops" tabindex="-1">All-in-one</a></li><li id="n-main_page.2523rpi-robots"><a href="https://www.waveshare.com/wiki/Main_Page#RPi-Robots" tabindex="-1">Robots</a></li><li id="n-main_page.2523rpi-games"><a href="https://www.waveshare.com/wiki/Main_Page#RPi-Games" tabindex="-1">Portable Gaming</a></li><li id="n-main_page.2523rpi-acces"><a href="https://www.waveshare.com/wiki/Main_Page#RPi-Acces" tabindex="-1">Accessories</a></li><li id="n-main_page.2523android-linux-boards"><a href="https://www.waveshare.com/wiki/Main_Page#Android-Linux-Boards" tabindex="-1">Other Android/Linux Boards</a></li></ul></li><li class="nav"><a href="#" id="n-ai" class="dropdown-toggle" data-toggle="dropdown">AI <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523jetson-ai-boards"><a href="https://www.waveshare.com/wiki/Main_Page#Jetson-AI-Boards" tabindex="-1">Boards/Kits</a></li><li id="n-main_page.2523jetson-ai-displays"><a href="https://www.waveshare.com/wiki/Main_Page#Jetson-AI-Displays" tabindex="-1">Displays</a></li><li id="n-main_page.2523jetson-ai-cameras"><a href="https://www.waveshare.com/wiki/Main_Page#Jetson-AI-Cameras" tabindex="-1">Cameras</a></li><li id="n-main_page.2523jetson-ai-hat"><a href="https://www.waveshare.com/wiki/Main_Page#Jetson-AI-HAT" tabindex="-1">Expansions</a></li><li id="n-main_page.2523jetson-ai-robots"><a href="https://www.waveshare.com/wiki/Main_Page#Jetson-AI-Robots" tabindex="-1">Robots</a></li></ul></li><li class="nav"><a href="#" id="n-displays" class="dropdown-toggle" data-toggle="dropdown">Displays <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523display-lcd-oleds"><a href="https://www.waveshare.com/wiki/Main_Page#Display-LCD-OLEDs" tabindex="-1">LCD/OLED</a></li><li id="n-main_page.2523display-e-paper"><a href="https://www.waveshare.com/wiki/Main_Page#Display-e-Paper" tabindex="-1">e-Paper</a></li></ul></li><li class="nav"><a href="#" id="n-iot" class="dropdown-toggle" data-toggle="dropdown">IoT <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523long-range-wireless-comm"><a href="https://www.waveshare.com/wiki/Main_Page#Long-range-wireless-comm" tabindex="-1">Long Range Wireless</a></li><li id="n-main_page.2523short-range-wireless-comm"><a href="https://www.waveshare.com/wiki/Main_Page#Short-range-wireless-comm" tabindex="-1">Short Range Wireless</a></li><li id="n-main_page.2523wired-communication"><a href="https://www.waveshare.com/wiki/Main_Page#Wired-communication" tabindex="-1">Wired Comm / Converter</a></li><li id="n-main_page.2523misc-cameras-av"><a href="https://www.waveshare.com/wiki/Main_Page#Misc-cameras-av" tabindex="-1">Cameras / Audio / Video</a></li><li id="n-main_page.2523misc-sensor-modules"><a href="https://www.waveshare.com/wiki/Main_Page#Misc-sensor-modules" tabindex="-1">Sensors</a></li><li id="n-main_page.2523misc-servos-motors"><a href="https://www.waveshare.com/wiki/Main_Page#Misc-servos-motors" tabindex="-1">Motors / Servos</a></li><li id="n-main_page.2523misc-other-modules"><a href="https://www.waveshare.com/wiki/Main_Page#Misc-other-modules" tabindex="-1">others</a></li></ul></li><li class="nav"><a href="#" id="n-robotics" class="dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523robotics-cars"><a href="https://www.waveshare.com/wiki/Main_Page#Robotics-cars" tabindex="-1">Mobile Robots</a></li><li id="n-main_page.2523dog-like-robots"><a href="https://www.waveshare.com/wiki/Main_Page#Dog-like-Robots" tabindex="-1">Dog-like Robots</a></li><li id="n-main_page.2523robotics-drivers-sensors"><a href="https://www.waveshare.com/wiki/Main_Page#Robotics-drivers-sensors" tabindex="-1">Drivers / Sensors</a></li><li id="n-main_page.2523robotics-robot-arms"><a href="https://www.waveshare.com/wiki/Main_Page#Robotics-robot-arms" tabindex="-1">Robot Arm / Control</a></li></ul></li><li class="nav"><a href="#" id="n-mcu.252Ffpga" class="dropdown-toggle" data-toggle="dropdown">MCU/FPGA <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523arduino-main-boards"><a href="https://www.waveshare.com/wiki/Main_Page#Arduino-main-boards" tabindex="-1">Arduino</a></li><li id="n-main_page.2523micro.253Abit"><a href="https://www.waveshare.com/wiki/Main_Page#micro:bit" tabindex="-1">micro:bit</a></li><li id="n-main_page.2523mcu.2farm" class="LPC"><a href="https://www.waveshare.com/wiki/Main_Page#MCU.2FARM" tabindex="-1">STM32</a></li><li id="n-main_page.2523fpga"><a href="https://www.waveshare.com/wiki/Main_Page#FPGA" tabindex="-1">FPGA</a></li></ul></li><li class="nav"><a href="https://support.waveshare.com/hc/en-us/requests/new" id="n-https.253A.252F.252Fsupport.waveshare.com.252Fhc.252Fen-us.252Frequests.252Fnew" rel="nofollow" target="_blank">Support</a></li>							</ul>
+						
+													<ul class="nav navbar-nav navbar-right">
+							</ul>
+				<form class="navbar-form navbar-right" action="/w/index.php" id="searchform">
+					<div class="form-group"><input type="search" name="search" placeholder="Search" title="Search Waveshare Wiki [Alt+Shift+f]" accesskey="f" id="searchInput" class="search-query form-control"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="mw-searchButton" class="searchButton btn hidden">
+					</div>
+				</form><ul class="nav navbar-nav navbar-right">							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- /navbar -->
+					<div id="mw-page-base"></div>
+			<div id="mw-head-base"></div>
+			<a id="top"></a>
+
+			<!-- content -->
+			<div id="contentwrapper" class="user-loggedout not-editable container with-navbar with-navbar-fixed">
+
+				
+				<div class="row">
+					<div class="col-md-offset-2 col-md-10" role="main">
+								<div class="mw-body" id="content">
+			<div id="mw-js-message" style="display:none;"></div>
+									<h1 id="firstHeading" class="firstHeading page-header" lang="en"><span dir="auto">RPi Camera (G)</span></h1>
+									<!-- bodyContent -->
+			<div id="bodyContent">
+								<div id="siteSub">From Waveshare Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div class="mw-parser-output"><div class="wiki-pages jet-green-color">
+<table class="a-r at-c roundy bgd-green bl-white" style="margin-left: 5px; margin-bottom: 5px; width: 30%;">
+
+<tbody><tr>
+<td>
+<table class="at-c roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>RPi Camera (G)</b><br><small><b>Fisheye Lens</b></small>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><a href="http://www.waveshare.com/product/RPi-Camera-G.htm" title="RPi Camera (G)" target="_blank" rel="nofollow noreferrer noopener"><img alt="RPi-Camera-G" src="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/RPi-Camera-G-1.jpg" decoding="async" loading="lazy" srcset="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/RPi-Camera-G-1_002.jpg 1.5x, RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/RPi-Camera-G-1_003.jpg 2x" data-file-width="709" data-file-height="532" width="300" height="225"></a><br><br><small>Raspberry Pi Camera Module, Fisheye Lens, Wider Field of View</small>
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name2}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br>
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name3}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br>
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name4}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br>
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name5}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table class="roundy" style="display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" class="at-c roundytop bgl-white" width="90%">Primary Attribute
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" class="at-c roundytl roundytr bgwhite b-green" style="border-width: 0 0 1px 0;" width="90px"><b>Category:</b> <a href="https://www.waveshare.com/wiki/Category:Modules" title="Category:Modules">Modules</a>, <a href="https://www.waveshare.com/wiki/Category:Raspberry_Pi" title="Category:Raspberry Pi">Raspberry Pi</a>, <a href="https://www.waveshare.com/wiki/Category:Cameras" title="Category:Cameras">Cameras</a>, <a href="https://www.waveshare.com/wiki/Category:Raspberry_Pi_Camera" title="Category:Raspberry Pi Camera">Raspberry Pi Camera</a>
+</td></tr>
+<tr style="display:none;">
+<th colspan="3" class="at-r bgwhite b-green" style="border-width: 0 0 1px 0;" width="90px">{{{userDefinedInfo}}}:
+</th>
+<td colspan="3" class="at-l b-green bgwhite" style="border-width: 0 0 1px 0;">{{{userdefinedvalue}}}
+</td></tr>
+<tr style="display:none;">
+<td colspan="6" class="at-c roundybl roundybr bgwhite" width="90px"><b>Brand:</b> Waveshare
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table class="a-r roundy" style="display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" class="at-c roundytop bgl-white" width="90%">Website
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" class="at-c roundytl roundytr bgwhite b-green" style="border-width: 0 0 1px 0;" width="90px"><b>International:</b> <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.waveshare.com/RPi-Camera-G.htm">Waveshare website</a>
+</td></tr>
+<tr>
+<td colspan="6" class="at-c roundybl roundybr bgwhite" width="90px"><b>Chinese:</b> <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.waveshare.net/shop/RPi-Camera-G.htm">官方中文站点</a>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table class="a-r roundy" style="background: transparent; border-collapse:collapse;width:100%;display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" class="at-c roundytop bgl-white" width="90%">Onboard Interfaces
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" class="at-l roundy bgwhite b-green" style="border-width: 0 0 1px 0;" width="90px">
+<table class="roundy bgwhite fulltable" style="text-align:center;">
+
+<tbody><tr>
+<td class="roundy bl-gray bw-1" style="width:25%;;"><small><b><a href="https://www.waveshare.com/wiki/Category:CSI_interface" title="Category:CSI interface">CSI</a></b></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table class="a-r roundy" style="background: transparent; border-collapse:collapse;width:100%;;display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" class="at-c roundytop bgl-white" width="90%">Related Products
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" class="at-l roundy bgwhite b-green" style="border-width: 0 0 1px 0;" width="90px">
+<ul><li><a href="https://www.waveshare.com/wiki/6mm_Wide_Angle_Lens_for_Pi" class="mw-redirect" title="6mm Wide Angle Lens for Pi">6mm Wide Angle Lens for Pi</a></li>
+<li><a href="https://www.waveshare.com/wiki/16mm_Telephoto_Lens_for_Pi" class="mw-redirect" title="16mm Telephoto Lens for Pi">16mm Telephoto Lens for Pi</a></li>
+<li><a href="https://www.waveshare.com/wiki/25mm_Telephoto_Lens_for_Pi" title="25mm Telephoto Lens for Pi">25mm Telephoto Lens for Pi</a></li>
+<li><a href="https://www.waveshare.com/wiki/35mm_Telephoto_Lens_for_Pi" class="mw-redirect" title="35mm Telephoto Lens for Pi">35mm Telephoto Lens for Pi</a></li>
+<li><a href="https://www.waveshare.com/wiki/8-50mm_Zoom_Lens_for_Pi" class="mw-redirect" title="8-50mm Zoom Lens for Pi">8-50mm Zoom Lens for Pi</a></li>
+<li><a href="https://www.waveshare.com/wiki/Camera_Scheduler" title="Camera Scheduler">Camera Scheduler</a></li>
+<li><a href="https://www.waveshare.com/wiki/IMX477_12.3MP_Camera" title="IMX477 12.3MP Camera">IMX477 12.3MP Camera</a></li>
+<li><a href="https://www.waveshare.com/wiki/IMX477-160_12.3MP_Camera" title="IMX477-160 12.3MP Camera">IMX477-160 12.3MP Camera</a></li>
+<li><a href="https://www.waveshare.com/wiki/Raspberry_Pi_HQ_Camera" title="Raspberry Pi HQ Camera">Raspberry Pi HQ Camera</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_IR-CUT_Camera_(B)" title="RPi IR-CUT Camera (B)">RPi IR-CUT Camera (B)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_IR-CUT_Camera" title="RPi IR-CUT Camera">RPi IR-CUT Camera</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_NoIR_Camera_V2" title="RPi NoIR Camera V2">RPi NoIR Camera V2</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_V2" title="RPi Camera V2">RPi Camera V2</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_FPC_Camera" title="RPi FPC Camera">RPi FPC Camera</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_FPC_Camera_(B)" title="RPi FPC Camera (B)">RPi FPC Camera (B)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_(M)" title="RPi Camera (M)">RPi Camera (M)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_(I)" title="RPi Camera (I)">RPi Camera (I)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_(H)" title="RPi Camera (H)">RPi Camera (H)</a></li>
+<li><a class="mw-selflink selflink">RPi Camera (G)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_(F)" title="RPi Camera (F)">RPi Camera (F)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_(E)" title="RPi Camera (E)">RPi Camera (E)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_(D)" title="RPi Camera (D)">RPi Camera (D)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_(C)" title="RPi Camera (C)">RPi Camera (C)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera_(B)" title="RPi Camera (B)">RPi Camera (B)</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Camera" title="RPi Camera">RPi Camera</a></li>
+<li><a href="https://www.waveshare.com/wiki/RPi_Zero_V1.3_Camera" title="RPi Zero V1.3 Camera">RPi Zero V1.3 Camera</a></li></ul>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<div class="tabbertab">
+
+
+<h2><span class="mw-headline" id="Hardware_Connection">Hardware Connection</span></h2>
+<p><font color="red"><b>To test the Camera, you need to connect a HDMI display or a DIS display for previewing.</b></font> <br>
+The connectors of the DSI interface (display) and the CSI interface 
+(camera) look the same, please take care of it when you connect the 
+camera. The CSI interface is placed between the Audio jack and the HDMI 
+port. the CSI connector of Pi zero is beside the Power interface. If you
+ use Compute Module, please check the actual place of the carrier board.
+ <br>
+</p>
+<ul><li>Connect to Pi Zero Series</li></ul>
+<dl><dd>The metal surface of the FPC is downward, then connect to the CSI interface.</dd>
+<dd><a href="https://www.waveshare.com/wiki/File:RPi-Camera-G-5.jpg" class="image"><img alt="RPi-Camera-G-5.jpg" src="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/RPi-Camera-G-5.jpg" decoding="async" loading="lazy" data-file-width="500" data-file-height="375" width="500" height="375"></a></dd></dl>
+<ul><li>Other Raspberry Pi motherboards</li></ul>
+<dl><dd>Place the metal side of the cable towards the HDMI port and connect to the camera port.</dd>
+<dd><a href="https://www.waveshare.com/wiki/File:RPi-Camera-G-4.jpg" class="image"><img alt="RPi-Camera-G-4.jpg" src="RPi%20Camera%20(G)%20-%20Waveshare%20Wiki_files/RPi-Camera-G-4.jpg" decoding="async" loading="lazy" data-file-width="500" data-file-height="375" width="500" height="375"></a></dd></dl>
+<p><br>
+</p><p><br>
+</p>
+<h2><span class="mw-headline" id="About_the_model">About the model</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Photosensitive Chip Model</th>
+<th>Supported Raspberry Pi Board Model</th>
+<th>Supported Driver Type
+</th></tr>
+<tr>
+<td>OV5647</td>
+<td>All Raspberry Pi boards</td>
+<td>libcamera / Raspicam
+</td></tr>
+<tr>
+<td>OV9281</td>
+<td>All Raspberry Pi boards</td>
+<td>libcamera
+</td></tr>
+<tr>
+<td>IMX219 (Raspberry Pi official)</td>
+<td>All Raspberry Pi boards</td>
+<td>libcamera / Raspicam
+</td></tr>
+<tr>
+<td>IMX219 (third party)</td>
+<td>Raspberry Pi Compute Module</td>
+<td>libcamera
+</td></tr>
+<tr>
+<td>IMX290/IMX327</td>
+<td>All Raspberry Pi boards</td>
+<td>libcamera
+</td></tr>
+<tr>
+<td>IMX378</td>
+<td>All Raspberry Pi boards</td>
+<td>libcamera
+</td></tr>
+<tr>
+<td>IMX477 (Raspberry Pi official)</td>
+<td>All Raspberry Pi boards</td>
+<td>libcamera / Raspicam
+</td></tr>
+<tr>
+<td>IMX477 (third party)</td>
+<td>Raspberry Pi Compute Module</td>
+<td>libcamera
+</td></tr>
+<tr>
+<td>IMX519</td>
+<td>All Raspberry Pi boards</td>
+<td>libcamera (needs to install driver)
+</td></tr>
+<tr>
+<td>IMX708 (Raspberry Pi Camera Module 3)</td>
+<td>All Raspberry Pi boards</td>
+<td>libcamera
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enable_Camera_Interface">Enable Camera Interface</span></h2>
+<p>If you are using the latest bullseye image, the camera interface has 
+been enabled by default, so you can skip the modification steps.<br>
+</p>
+<ul><li>Open the Raspberry Pi terminal and use the command to enter the setting interface</li></ul>
+<pre>sudo raspi-config
+</pre>
+<ul><li>Set up the camera</li></ul>
+<p>Select Interface Options -&gt; Camera -&gt; Yes -&gt; Finish -&gt; Yes<br>
+</p>
+<ul><li>Reboot the Raspberry Pi</li></ul>
+<h2><span id="Test_Camera(Bullseyes_OS)"></span><span class="mw-headline" id="Test_Camera.28Bullseyes_OS.29">Test Camera(Bullseyes OS)</span></h2>
+<p><b>Configure</b><br>
+If you are using the latest Raspberry Pi Camera Module 3, you need to 
+run the following command to update the system (requires network 
+operation). Note that only the latest bulleyes system is supported.<br>
+</p>
+<pre>sudo apt-get update -y
+sudo apt-get upgrade-
+</pre>
+<p>If you use OV9281, IMX290, IMX378, or non-Raspberry Pi official 
+IMX219 and IMX477 cameras, you need to configure the config.txt file 
+separately.
+</p>
+<pre>sudo nano /boot/config.txt
+</pre>
+<p>Find "camera-auto-detect=1" and modify it to "camera_auto_detect=0".
+</p>
+
+<p>At the end of the file, add the following setting statements according to the camera model.
+</p>
+<table class="list" border="1">
+<tbody><tr>
+<th>Model</th>
+<th>Set Statement
+</th></tr>
+<tr>
+<td>OV9281</td>
+<td>dtoverlay=ov9281
+</td></tr>
+<tr>
+<td>IMX290/IMX327</td>
+<td>dtoverlay=imx290, clock-frequency=37125000
+</td></tr>
+<tr>
+<td>IMX378</td>
+<td>dtoverlay=imx378
+</td></tr>
+<tr>
+<td>IMX219</td>
+<td>dtoverlay=imx219
+</td></tr>
+<tr>
+<td>IMX477</td>
+<td>dtoverlay=imx477
+</td></tr></tbody></table>
+<dl><dt>Open the Raspberry Pi terminal and enable the camera to preview.</dt></dl>
+<pre>sudo libcamera-hello -t 0
+</pre>
+<p>If you want to close the preview window, you can directly combine the
+ keys Alt-F4, or click x to close. You can also go back to the terminal 
+interface and terminate the program with Ctrl+c. <br>
+</p>
+<h2><span id="Test_Camera（Buster_OS）"></span><span class="mw-headline" id="Test_Camera.EF.BC.88Buster_OS.EF.BC.89">Test Camera（Buster OS）</span></h2>
+<p>Suitable for OV5647, official IMX219, official IMX477.<br>
+Open the Raspberry Pi and enable camera preview:<br>
+</p>
+<pre>sudo raspistill -t 0
+</pre>
+<p>If you want to close the preview windows, you can use Ctrl-C to stop the appliation.
+</p>
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>After the Bullseye version of the Raspberry Pi image, the underlying 
+Raspberry Pi driver was switched from Raspicam to libcamera. Libcamera 
+is an open-source software stack (will be called driver later, which is 
+easy to understand), which is convenient for third-party porting and 
+development of their own camera drivers. As of 2021-12-20, there are 
+still many bugs in libcamera, and the current libcamera does not support
+ python, so the Raspberry Pi official still provides a method for 
+installing and downloading Raspicam. For users who are difficult to 
+switch to libcamera but need to use the latest system, please directly 
+refer to the Raspicam instructions. <br>
+</p>
+<h2><span class="mw-headline" id="Call_Camera">Call Camera</span></h2>
+<p>The libcamera software stack provides six instructions for users to preview and test the camera interface.
+</p>
+<h3><span class="mw-headline" id="libcamera-hello"><b>libcamera-hello</b></span></h3>
+<p>This is a simple "hello world" program that previews the camera and displays the camera image on the screen.<br>
+<b>Example</b><br>
+</p>
+<pre>libcamera-hello
+</pre>
+<p>This command will preview the camera on the screen for about 5 
+seconds. The user can use the "-t &lt;duration&gt;" parameter to set the
+ preview time, where the unit of &lt;duration&gt; is milliseconds. If it
+ is set to 0, it will keep previewing all the time. For example:
+</p>
+<pre>libcamerahello -t 0
+</pre>
+<p><b>Tune File</b><br>
+The libcamera driver of the Raspberry Pi will call a tuning file for 
+different camera modules. The tuning file provides various parameters. 
+When calling the camera, libcamera will call the parameters in the 
+tuning file, and process the image in combination with the algorithm. 
+The final output is the preview screen. Since the libcamera driver can 
+only automatically receive the signal of the chip, the final display 
+effect of the camera will also be affected by the entire module. The use
+ of the tuning file is to flexibly handle the cameras of different 
+modules and adjust to improve the image quality. <br>
+If the output image of the camera is not ideal after using the default 
+tuning file, the user can adjust the image by calling the custom tuning 
+file. For example, if you are using the official NOIR version of the 
+camera, the NOIR camera may require different white balance parameters 
+compared with the regular Raspberry Pi Camera V2. In this case, you can 
+switch by calling the tuning file. <br>
+</p>
+<pre>libcamera-hello --tuning-file /usr/share/libcamera/ipa/raspberrypi/imx219_noir.json
+</pre>
+<p>Users can copy the default tuning files and modify them according to their needs. <br>
+Note: The use of tuning files is applicable to other libcamera commands, and will not be introduced in subsequent commands.<br>
+</p><p><b>Preview Window</b><br>
+Most libcamera commands will display a preview window on the screen. 
+Users can customize the title information of the preview window through 
+the --info-text parameter, and can also call some camera parameters 
+through %directives and display them on the window.<br>
+For example, if you use HQ Camera: You can display the focal length of the camera on the window through --info-txe "%focus".<br>
+</p>
+<pre>libcamera-hello --info-text "focus %focus".
+</pre>
+<p>Note: For more information on parameter settings, please refer to the following chapters.
+</p>
+<h3><span class="mw-headline" id="libcamera-jpeg"><b>libcamera-jpeg</b></span></h3>
+<p>libcamera-jpeg is a simple still picture shooting program, different 
+from the complex functions of libcamera-still, libcamera-jpeg code is 
+more concise and has many of the same functions to complete picture 
+shooting.<br>
+<b>Take JPEG image of full pixel</b><br>
+</p>
+<pre>libcamera-jpeg -o test.jpg
+</pre>
+<p>This shooting command will display a preview serial port for about 5 
+seconds, and then shoot a full-pixel JPEG image and save it as test.jpg.
+ <br>
+Users can set the preview time through the -t parameter, and can set the
+ resolution of the captured image through --width and --height. E.g:
+</p>
+<pre>libcamera-jpeg -o test.jpg -t 2000 --width 640 --height 480
+</pre>
+<p><b>Exposure control</b><br>
+All libcamera commands allow the user to set the shutter time and gain themselves, such as:
+</p>
+<pre>libcamera-jpeg -o test.jpg -t 2000 --shutter 20000 --gain 1.5
+</pre>
+<p>This command will capture an image with 20ms exposure and camera gain
+ set to 1.5x. The gain parameter set will first set the analog gain 
+parameter inside the photosensitive chip. If the set gain exceeds the 
+maximum built-in analog gain value of the driver, the maximum analog 
+gain of the chip will be set first, and then the remaining gain 
+multiples will be used as numbers. gain to take effect. <br>
+Remarks: The digital gain is realized by ISP (image signal processing), 
+not directly adjusting the built-in register of the chip. Under normal 
+circumstances, the default digital gain is close to 1.0, unless there 
+are the following three situations. <br>
+</p>
+<ol><li>Overall gain parameter requirements, that is, when the analog 
+gain cannot meet the set gain parameter requirements, the digital gain 
+will be needed for compensation.</li>
+<li>One of the color gains is less than 1 (the color gain is achieved by
+ digital gain), in this case, the final gain is stabilized at 
+1/min(red_gain, blue_gain), that is, a uniform number is actually 
+applied gain, and is the gain value for one of the color channels (not 
+the green channel).</li>
+<li>AEC/AGC was modified. If there is a change in AEC/AGC, the numerical
+ gain will also change to a certain extent, where does it come from to 
+eliminate any fluctuations, but this change will be quickly restored to 
+the "normal" value.</li></ol>
+<p>The Raspberry Pi's AEC/AGX algorithm allows the program to specify 
+exposure compensation, which is to adjust the brightness of the image by
+ setting the aperture value, for example:
+</p>
+<pre>libcamera-jpeg --ev -0.5 -o darker.jpg
+libcamera-jpeg --ev 0 -o normal.jpg
+libcamera-jpeg --ev 0.5 -o brighter.jpg
+</pre>
+<h3><span class="mw-headline" id="libcamera-still"><b>libcamera-still</b></span></h3>
+<p>libcamera-still and libcamera-jpeg are very similar, the difference 
+is that libcamera inherits more functions of raspistill. As before, the 
+user can take a picture with the following command.<br>
+<b>Test Command</b><br>
+</p>
+<pre>libcamera-still -o test.jpg
+</pre>
+<p><b>Encoder</b><br>
+libcamea-still supports image files in different formats, can support 
+png and bmp encoding, and also supports saving binary dumps of RGB or 
+YUV pixels as files without encoding or in any image format. If you save
+ RGB or YUV data directly, the program must understand the pixel 
+arrangement of the file when reading such files.
+</p>
+<pre>libcamera-still -e png -o test.png
+libcamera-still -e bmp -o test.bmp
+libcamera-still -e rgb -o test.data
+libcamera-still -e yuv420 -o test.data
+</pre>
+<p>Note: The format of image saving is controlled by the -e parameter. 
+If the -e parameter is not called, it will be saved in the format of the
+ output file name by default.<br>
+<b>Raw image capture</b><br>
+The raw image is the image output by the direct image sensor without any
+ ISP or CPU processing. For color camera sensors, the output format of 
+the raw image is generally Bayer. Note that the raw image is different 
+from the bit-encoded RGB and YUV images we said earlier, and RGB and YUV
+ are also ISP-processed images. <br>
+Instructions to take a raw image:<br>
+</p>
+<pre>libcamera-still -r -o test.jpg
+</pre>
+<p>The original image is generally saved in DNG (Adobe Digital Negative)
+ format, which is compatible with most standard programs, such as dcraw 
+or RawTherapee. The original image will be saved as a file of the same 
+name with the .dng suffix, for example, if you run the above command, it
+ will be saved as a test.dng, and generate a jpeg file at the same time.
+ The DNG file contains metadata related to image acquisition, such as 
+white balance data, ISP color matrix, etc. The following is the metadata
+ encoding information displayed by the exiftool:<br>
+</p>
+<pre>File Name                       : test.dng
+Directory                       : .
+File Size                       : 24 MB
+File Modification Date/Time     : 2021:08:17 16:36:18+01:00
+File Access Date/Time           : 2021:08:17 16:36:18+01:00
+File Inode Change Date/Time     : 2021:08:17 16:36:18+01:00
+File Permissions                : rw-r--r--
+File Type                       : DNG
+File Type Extension             : dng
+MIME Type                       : image/x-adobe-dng
+Exif Byte Order                 : Little-endian (Intel, II)
+Make                            : Raspberry Pi
+Camera Model Name               : /base/soc/i2c0mux/i2c@1/imx477@1a
+Orientation                     : Horizontal (normal)
+Software                        : libcamera-still
+Subfile Type                    : Full-resolution Image
+Image Width                     : 4056
+Image Height                    : 3040
+Bits Per Sample                 : 16
+Compression                     : Uncompressed
+Photometric Interpretation      : Color Filter Array
+Samples Per Pixel               : 1
+Planar Configuration            : Chunky
+CFA Repeat Pattern Dim          : 2 2
+CFA Pattern 2                   : 2 1 1 0
+Black Level Repeat Dim          : 2 2
+Black Level                     : 256 256 256 256
+White Level                     : 4095
+DNG Version                     : 1.1.0.0
+DNG Backward Version            : 1.0.0.0
+Unique Camera Model             : /base/soc/i2c0mux/i2c@1/imx477@1a
+Color Matrix 1                  : 0.8545269369 -0.2382823821 -0.09044229197 -0.1890484985 1.063961506 0.1062747385 -0.01334283455 0.1440163847 0.2593136724
+As Shot Neutral                 : 0.4754476844 1 0.413686484
+Calibration Illuminant 1        : D65
+Strip Offsets                   : 0
+Strip Byte Counts               : 0
+Exposure Time                   : 1/20
+ISO                             : 400
+CFA Pattern                     : [Blue, Green][Green, Red]
+Image Size                      : 4056x3040
+Megapixels                      : 12.3
+Shutter Speed                   : 1/20
+</pre>
+<p><b>Long exposure</b><br>
+If we want to take a super long exposure picture, we need to disable 
+AEC/AGC and white balance, otherwise, these algorithms will cause the 
+picture to wait for a lot of frame data when it converges. Disabling 
+these algorithms requires another explicit value to be set. 
+Additionally, the user can skip the preview process with the --immediate
+ setting. <br>
+Here is the instruction to take an image with an exposure of 100 seconds:<br>
+</p>
+<pre>libcamera-still -o long_exposure.jpg --shutter 100000000 --gain 1 --awbgains 1,1 --immediate
+</pre>
+<p>Remarks: Reference table for the longest exposure time of several official cameras.<br>
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Module</th>
+<th>Maximum exposure time (s)
+</th></tr>
+<tr>
+<td>V1 (OV5647)</td>
+<td>6
+</td></tr>
+<tr>
+<td>V2 (IMX219)</td>
+<td>11.76
+</td></tr>
+<tr>
+<td>V3 (IMX708)</td>
+<td>112
+</td></tr>
+<tr>
+<td>HQ (IMX477)</td>
+<td>670
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="libcamera-vid"><b>libcamera-vid</b></span></h3>
+<p>libcamera-vid is a video recording program that uses the Raspberry Pi
+ hardware H.264 encoder by default. After the program runs, a preview 
+window will be displayed on the screen, and the bitstream encoding will 
+be output to the specified file. For example, record a 10s video.
+</p>
+<pre>libcamera-vid -t 10000 -o test.h264
+</pre>
+<p>If you want to view the video, you can use vlc to play it.
+</p>
+<pre>vlc test.h264
+</pre>
+<p>Note: The recorded video stream is unpackaged. Users can use 
+--save-pts to set the output timestamp to facilitate subsequent 
+conversion of the bit stream to other video formats.
+</p>
+<pre>libcamera-vid -o test.h264 --save-pts timestamps.txt
+</pre>
+<p>If you want to output the mkv file, you can use the following command:
+</p>
+<pre>mkvmerge -o test.mkv --timecodes 0:timestamps.txt test.h264
+</pre>
+<p><b>Encoder</b><br>
+Raspberry Pi supports JPEG format and YUV420 without compression and format:
+</p>
+<pre>libcamera-vid -t 10000 --codec mjpeg -o test.mjpeg
+libcamera-vid -t 10000 --codec yuv420 -o test.data
+</pre>
+<p>The --codec option sets the output format, not the output file extension. <br>
+Use the --segment parameter to split the output file into segments (unit
+ is ms), which is suitable for JPEG files that need to split the JPEG 
+video stream into separate short (about 1ms) JPEG files.
+</p>
+<pre>libcamera-vid -t 10000 --codec mjpeg --segment 1 -o test%05d.jpeg
+</pre>
+<p><b>UDP Video Streaming Transmission</b><br>
+UDP can be used for video streaming, and the Raspberry Pi runs (server):<br>
+</p>
+<pre>libcamera-vid -t 0 --inline -o udp://&lt;ip-addr&gt;:&lt;port&gt;
+</pre>
+<p>Among them, &lt;ip-addr&gt; needs to be replaced with the actual 
+client IP address or multicast address.
+On the client (client), enter the following commands to obtain and 
+display the video stream (you can use one of the two commands);
+</p>
+<pre>vlc udp://@:&lt;port&gt; :demux=h264
+vlc udp://@:&lt;port&gt; :demux=h264
+</pre>
+<p>Note: The port needs to be the same as the one you set on the Raspberry Pi.<br>
+<b>TCP Video Streaming Transmission</b><br>
+You can use TCP for video streaming, and the Raspberry Pi runs (server):
+</p>
+<pre>libcamera-vid -t 0 --inline --listen -o tcp://0.0.0.0:&lt;port&gt;
+</pre>
+<p>The client runs:<br>
+</p>
+<pre>vlc tcp/h264://&lt;ip-addr-of-server&gt;:&lt;port&gt; #Select one of the two commands
+ffplay tcp://&lt;ip-addr-of-server&gt;:&lt;port&gt; -vf "setpts=N/30" -fflags nobuffer -flags low_delay -framedrop
+</pre>
+<p><b>RTSP Video Streaming Transmission</b><br>
+On the Raspberry Pi, vlc is usually used to process the RTSP video stream:
+</p>
+<pre>libcamera-vid -t 0 --inline -o - | cvlc stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/stream1}' :demux=h264
+</pre>
+<p>On the playback side, you can run any of the following commands:
+</p>
+<pre>vlc rtsp://&lt;ip-addr-of-server&gt;:8554/stream1
+ffplay rtsp://&lt;ip-addr-of-server&gt;:8554/stream1 -vf "setpts=N/30" -fflags nobuffer -flags low_delay -framedrop
+</pre>
+<p>In all preview commands, if you want to turn off the preview window 
+on the Raspberry Pi, you can use the parameter -n (--nopreview) to set 
+it. Also, pay attention to the setting of the --inline parameter. 
+Changing the setting will force the header information of the video 
+stream to be included in each I (intra) frame. This setting allows the 
+client to correctly parse the video stream even if the video header is 
+lost.<br>
+<b>High Frame Rate Mode</b><br>
+If you use the libcamera-vid command to record high frame rate video 
+(generally higher than 60fps) while reducing frame loss, you need to pay
+ attention to the following points:<br>
+</p>
+<ol><li>The target level of H.264 needs to be set to 4.2, which can be set with the <b>--level 4.2</b> parameter.</li>
+<li>The color noise reduction function must be turned off, you can use the <b>--denoise cdn_off</b> parameter setting.</li>
+<li>If the set frame rate is higher than 100fps, close the preview 
+window to release more CPU resources and avoid frame loss. Can be set 
+using the parameter <b>-n</b>.</li>
+<li>It is recommended to add the setting force_turbo=1 in the 
+/boot/config.txt file to ensure that the CPU clock will not be limited 
+during the video stream or in the middle.</li>
+<li>Adjust the ISP output resolution, use <b>-width 1280 --height 720</b> to set the resolution, or set it to a lower resolution, depending on the camera model.</li>
+<li>If you are using Pi 4 or this higher-performance model, you can add 
+the setting gpu_freq=550 or higher in the /boot/config.txt file to 
+overclock the motherboard GPU to achieve higher performance.</li></ol>
+<p>For example, record 1280x720 120fps video.
+</p>
+<pre>libcamera-vid --level 4.2 --framerate 120 --width 1280 --height 720 --save-pts timestamp.pts -o video.264 -t 10000 --denoise cdn_off -n
+</pre>
+<h3><span class="mw-headline" id="libcamera-raw"><b>libcamera-raw</b></span></h3>
+<p>Libcamera-raw is similar to a video recording program. In different 
+places, libcamera-raw records the Bayer format data output by the direct
+ sensor, that is, the original image data. Libcamera-raw doesn't show a 
+preview window. For example, record a 2-second clip of raw data.
+</p>
+<pre>libcamera-raw -t 2000 -o test.raw
+</pre>
+<p>The program will directly dump the original frame without format 
+information, the program will directly print the pixel format and image 
+size on the terminal, and the user can view the pixel data according to 
+the output data. <br>
+By default, the program will save the original frame as a file, the file
+ is usually large, and the user can divide the file by the --segement 
+parameter.
+</p>
+<pre>libcamera-raw -t 2000 --segment 1 -o test%05d.raw
+</pre>
+<p>If the memory is large (such as using SSD), libcamera-raw can write 
+the official HQ Camera data (about 18MB per frame) to the hard disk at a
+ speed of about 10 frames per second. In order to achieve this speed, 
+the program writes the unformatted raw frames, there is no way to save 
+them as DNG files like libcamera-still does. If you want to ensure that 
+there are no dropped frames, you can use --framerate to reduce the frame
+ rate.
+</p>
+<pre>libcamera-raw -t 5000 --width 4056 --height 3040 -o test.raw --framerate 8
+</pre>
+<h3><span class="mw-headline" id="Common_Command_Setting_Options"><b>Common Command Setting Options</b></span></h3>
+<p>Common command setting options apply to all libcamera commands:
+</p>
+<pre>--help, -h
+</pre>
+<p>Print program help information, you can print the available setting options for each program command, and then exit. <br>
+</p>
+<pre>--version
+</pre>
+<p>Print the software version, print the software version of libcamera and libcamera-app, then exit.<br>
+</p>
+<pre>--list-cameras
+</pre>
+<p>Displays the recognized supported cameras. for example:
+</p>
+<pre>Available cameras
+-----------------
+0&nbsp;: imx219 [3280x2464] (/base/soc/i2c0mux/i2c@1/imx219@10)
+    Modes: 'SRGGB10_CSI2P'&nbsp;: 640x480 [206.65 fps - (1000, 752)/1280x960 crop]
+                             1640x1232 [41.85 fps - (0, 0)/3280x2464 crop]
+                             1920x1080 [47.57 fps - (680, 692)/1920x1080 crop]
+                             3280x2464 [21.19 fps - (0, 0)/3280x2464 crop]
+           'SRGGB8'&nbsp;: 640x480 [206.65 fps - (1000, 752)/1280x960 crop]
+                      1640x1232 [41.85 fps - (0, 0)/3280x2464 crop]
+                      1920x1080 [47.57 fps - (680, 692)/1920x1080 crop]
+                      3280x2464 [21.19 fps - (0, 0)/3280x2464 crop]
+1&nbsp;: imx477 [4056x3040] (/base/soc/i2c0mux/i2c@1/imx477@1a)
+    Modes: 'SRGGB10_CSI2P'&nbsp;: 1332x990 [120.05 fps - (696, 528)/2664x1980 crop]
+           'SRGGB12_CSI2P'&nbsp;: 2028x1080 [50.03 fps - (0, 440)/4056x2160 crop]
+                             2028x1520 [40.01 fps - (0, 0)/4056x3040 crop]
+                             4056x3040 [10.00 fps - (0, 0)/4056x3040 crop]
+</pre>
+<p>According to the printed information, the IMX219 camera has a suffix 
+of 0, and the IM new 477 camera has a suffix of 1. When calling the 
+camera, you can specify the corresponding suffix.<br>
+</p>
+<pre>--camera
+</pre>
+<p>Specify the camera, and the corresponding suffix can refer to the print information of the command <b>--list-camera</b>.<br>
+For example: libcamera-hello -c config.txt<br>
+In the setting file, set parameters one line at a time, in the format of key=value:<br>
+</p>
+<pre>timeout=99000
+verbose=
+</pre>
+<pre>--config,	-c</pre>
+<p>Under normal circumstances, we can directly set the camera parameters
+ through commands. Here we use the --config parameter to specify the 
+setting file, and directly read the setting parameters in the file to 
+set the camera preview effect.
+</p>
+<pre>--timeout, -t
+</pre>
+<p>The "-t" option sets the runtime of the libcamera demo. If the video 
+recording command is run, the timeout option sets the recording 
+duration. If the image capture command is run, the timeout sets the 
+preview time before the image is captured and output. <br>
+If the timeout is not set when running the libcamera demo, the default 
+timeout value is 5000 (5 seconds). If the timeout is set to 0, the demo 
+will continue to run. <br>
+Example: <font style="color:grey; font-style:italic;">libcamera-hello -t 0</font>
+</p>
+<pre>--preview, -p
+</pre>
+<p>"-p" sets the size and position of the preview window (the qualified 
+settings are valid in both X and DRM version windows), and the format is
+ --preview &lt;x. y, w, h&gt; where "x, y" sets the preview window 
+coordinate, "w" and "h" set the width and length of the preview window.<br>
+The settings of the preview serial port will not affect the resolution 
+and aspect ratio of the camera image preview. The demo will scale the 
+preview image to display in the preview window and adapt it according to
+ the original image aspect ratio. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello -p 100,100,500,500</font>
+</p>
+<pre>--fullscreen, -f
+</pre>
+<p>The "-f" option sets the preview window full screen, the preview 
+window, and the border in full-screen mode. Like "-p", it does not 
+affect the resolution and aspect ratio, and will automatically adapt. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-still -f -o test.jpg</font>
+</p>
+<pre>--qt-preview
+</pre>
+<p>Using the preview window based on the QT framework, this setting is 
+not recommended under normal circumstances, because the preview demo 
+will not use zero-copy buffer sharing and GPU acceleration, which will 
+occupy more resources. The QT preview window supports X forwarding (the 
+default preview program does not).<br>
+The Qt preview serial port does not support the "--fullscreen" setting 
+option. If the user wants to use the Qt preview, it is recommended to 
+keep a small preview window to avoid excessive resource usage and 
+affecting the normal operation of the system. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello --qt-preview</font>
+</p>
+<pre>--nopreview, -n
+</pre>
+<p>Images are not previewed. This setting will turn off the image preview function.<br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello -n</font>
+</p>
+<pre>--info-text
+</pre>
+<p>Set the title and information display of the preview window (only 
+available in the X graphics window) using the format --info-text 
+&lt;string&gt;. When calling this option, there are multiple parameters 
+that can be set, and the parameters are usually called in the&nbsp;% 
+command format. The demo will call the corresponding value in the 
+graphics metadata according to the instruction. <br>
+If no window info is specified, the default --info-text is set to <font style="color:grey; font-style:italic"> "#%frame (%fps fps) exp %exp ag %ag dg %dg" </font> <br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello --info-test "Focus measure: %focus</font><br>
+Available parameters:<br>
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Instructions</th>
+<th>Instructions
+</th></tr>
+<tr>
+<td>%frame</td>
+<td>frame sequence number
+</td></tr>
+<tr>
+<td>%fps</td>
+<td>Instantaneous frame rate
+</td></tr>
+<tr>
+<td>%exp</td>
+<td>The shutter speed when capturing the image, in ms
+</td></tr>
+<tr>
+<td>%ag</td>
+<td>Image analog gain controlled by the sensor chip
+</td></tr>
+<tr>
+<td>%dg</td>
+<td>Image value gain controlled by ISP
+</td></tr>
+<tr>
+<td>%rg</td>
+<td>Gain of the red component of each pixel
+</td></tr>
+<tr>
+<td>%bg</td>
+<td>The gain of the blue component of each pixel
+</td></tr>
+<tr>
+<td>%focus</td>
+<td>The corner measurement of the image, the larger the value, the clearer the image
+</td></tr>
+<tr>
+<td>%lp</td>
+<td>Diopter of the current lens (1/distance in meters)
+</td></tr>
+<tr>
+<td>%afstate</td>
+<td>autofocus state (idle, scanning, focused, failed)
+</td></tr></tbody></table>
+<pre>--width
+--height
+</pre>
+<p>These two parameters set the width and height of the image, 
+respectively. For libcamera-still, libcamera-jpeg and libcamera-vid 
+commands, these two parameters can set the resolution of the output 
+image/video. <br>
+If the libcamera-raw command is used, these two parameters affect the 
+size of the obtained metadata frame. The camera has a 2 x 2 block 
+reading mode. If the set resolution is smaller than the split mode, the 
+camera will obtain the metadata frame according to the 2 x 2 block size.
+ <br>
+libcamera-hello cannot specify the resolution.<br>
+Example: <br>
+<font style="color:grey; font-style:italic">libcamera-vid -o test.h264 --width 1920 --height 1080</font> Record 1080p video <br>
+<font style="color:grey; font-style:italic">libcamera-still -r -o test.jpg --width 2028 --height 1520</font> Takes a 2028 x 1520 JPEG image. <br>
+</p>
+<pre>--viewfinder-width
+--viewfinder-height
+</pre>
+<p>This setting option is also used to set the resolution of the image, 
+the difference is only the image size of the preview. It does not affect
+ the final output image or video resolution. The size of the preview 
+image will not affect the size of the preview window and will be adapted
+ according to the window. <br>
+Example: <font style="color:grey; font-style:italic"> libcamera-hello --viewfinder-width 640 --viewfinder-height 480.</font>
+</p>
+<pre>--rawfull
+</pre>
+<p>This setting forces the sensor to use the --width and --height 
+settings to output still images and video in full-resolution read mode. 
+This setting libcamera-hello has no effect. <br>
+With this setting, the framerate is sacrificed. In full-resolution mode, frame reading will be slower. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-raw -t 2000 --segment 1 --rawfull -o test%03d.raw</font>
+ The example command captures multiple full-resolution images Metadata 
+frame in rate mode. If you are using an HQ camera. The size of each 
+frame is 18MB, and if --rawfull is not set, the HQ camera defaults to 2 x
+ 2 mode, and the data size of each frame is only 4.5MB.<br>
+</p>
+<pre>--mode
+</pre>
+<p>This parameter is more general than rawfull. It is used to set the 
+camera mode. When using it, you need to specify the width, height, bit 
+depth and packing mode, and separate them with colons. The set value 
+does not have to be completely accurate, the system will automatically 
+match the closest value, and the bit depth and packing mode can be set 
+(the default is 12 and P means packing).<br>
+</p>
+<ul><li><b>4056:3040:12:P</b> - 4056x3040 resolution, 12bit per pixel, 
+packed. Packing means that the original image data will be packed in the
+ buffer. In this case, two pixels will only occupy 3 bytes, which can 
+save memory</li>
+<li><b>1632:1224:10</b> - 1632x1224 resolution, 10bit per pixel, packed by default. In 10-bit packing mode, 4-pixel data will occupy 5 bytes.</li>
+<li><b>2592:1944:10:U</b> -2592x1944 resolution, 10 bits per pixel, no 
+packing. In the case of unpacking, each speed limit will occupy 2bytes 
+of memory, in this case, the highest 6 bits will be set to 0</li>
+<li><b>3262:2448</b> -3264x2448 resolution, 12bits, and packing mode are
+ used by default. However, if the camera model, such as Camera V2 
+(IMX219), does not support 12bits mode, the system will automatically 
+select 10bits mode</li></ul>
+<pre>--viewfinder-mode       #Specify sensor mode, given as &lt;width&gt;:&lt;height&gt;:&lt;bit-depth&gt;:&lt;packing&gt;
+</pre>
+<p>The --mode parameter is used to set the camera mode when recording 
+video and shooting still images. If you want to set it when previewing, 
+you can use the --viewfinder-mode parameter.<br>
+</p>
+<pre>--lores-width
+--lores-height
+</pre>
+<p>These two options set low-resolution images. The low-resolution data 
+stream compresses the image, causing the aspect ratio of the image to 
+change. When using libcamera-vid to record video, if a low resolution is
+ set, functions such as color denoising will be disabled. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello --lores-width 224 --lores-height 224 </font> Note that low-resolution settings are often used in conjunction with image postprocessing, otherwise it has little effect.
+</p>
+<pre>--hflip #Flip the image horizontally
+--vflip #Flip the image vertically
+--rotation #Flip the image horizontally or vertically according to the given angle &lt;angle&gt;
+</pre>
+<p>These three options are used to flip the image. The parameters of 
+--rotation currently only support 0 and 180, which are actually 
+equivalent to --hflip and --vflip.<br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello --vflip --hflip</font>
+</p>
+<pre>--roi #Crop image &lt;x, y, w, h&gt;
+</pre>
+<p>"--roi" allows the user to crop the image area they want according to
+ the coordinates from the complete image provided by the sensor, that 
+is, digital scaling, paying attention to the coordinate value if it is 
+in the valid range. For example --roi 0, 0, 1, 1 is an invalid 
+instruction. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello --roi 0.25,0.25,0.5,0.5 </font> <br>The example command will crop 1/4 of the image from the center of the image.
+</p>
+<pre>--hdr Run the camera in HDR mode (supported cameras only)
+</pre>
+<p>The hdr parameter is used to set the wide dynamic mode of the camera.
+ This setting will only take effect if the camera supports a wide 
+dynamic range. You can use --list-camera to see if the camera supports 
+hdr mode.
+</p>
+<pre>--sharpness #Set the sharpness of the image &lt;number&gt;
+</pre>
+<p>Adjust the sharpness of the image by the value of &lt;number&gt;. If 
+set to 0, no sharpening is applied. If you set a value above 1.0, an 
+extra sharpening amount will be used. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-still -o test.jpg --sharpness 2.0</font>
+</p>
+<pre>--contrast #Set image contrast &lt;number&gt;
+</pre>
+<p>Example: <font style="color:grey; font-style:italic">libcamera-still -o test.jpg --contrast 1.5</font>
+</p>
+<pre>--brightness #Set image brightness &lt;number&gt;
+</pre>
+<p>The setting range is -1.0 ~ 1.0 <br>
+Example: <font style="color:grey; font-style:italic"> libcamera-still -o test.jpg --brightness 0.2 </font>
+</p>
+<pre>--saturation #Set image color saturation &lt;number&gt;
+</pre>
+<p>Example: <font style="color:grey; font-style:italic">libcamera-still -o test.jpg --saturation 0.8</font>
+</p>
+<pre>--ev #Set EV compensation &lt;number&gt;
+</pre>
+<p>Set the EV compensation of the image in aperture units, the setting 
+range is -10 ~ 10, the default value is 0. The program works by 
+improving the target method of the AEC/AGC algorithm. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-still -o test.jpg --ev 0.3</font>
+</p>
+<pre>--shutter #Set the exposure time, the unit is ms &lt;number&gt;
+</pre>
+<p>Note: If the frame rate of the camera is too fast, it may not work 
+according to the set shutter time. If this happens, you can try to use 
+--framerate to reduce the frame rate. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello --shutter 30000 </font>
+</p>
+<pre>--gain #Set gain value (combination of numerical gain and analog gain) &lt;number&gt;
+--analoggain #--gain synonym
+</pre>
+<p>--analoggain is the same as --gain, the use of analoggain is only for compatibility with raspicam programs.
+</p>
+<pre>--metering #Set metering mode &lt;string&gt;
+</pre>
+<p>Set the metering mode of the AEC/AGC algorithm, the available parameters are: <br>
+</p>
+<ul><li>centre - Center metering (default)</li>
+<li>spot - spot metering</li>
+<li>average - average or full frame metering</li>
+<li>custom - custom metering mode, can be set via tuning file</li></ul>
+<p>Example: <font style="color:grey; font-style:italic">libcamera-still -o test.jpg --metering spot</font>
+</p>
+<pre>--exposure #Set exposure profile &lt;string&gt;
+</pre>
+<p>The exposure mode can be set to normal or sport. The report profile 
+for these two modes does not affect the overall exposure of the image, 
+but in the case of sports mode, the program will shorten the exposure 
+time and increase the justice to achieve the same exposure effect. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-still -o test.jpg --exposure sport </font>
+</p>
+<pre>--awb #Set white balance mode &lt;string&gt;
+</pre>
+<p>Available white balance modes:<br>
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Mode</th>
+<th>Color Temperature
+</th></tr>
+<tr>
+<td>auto</td>
+<td>2500K ~ 8000K
+</td></tr>
+<tr>
+<td>incadescent</td>
+<td>2500K ~ 3000K
+</td></tr>
+<tr>
+<td>tungsten</td>
+<td>3000K ~3500K
+</td></tr>
+<tr>
+<td>fluorescent</td>
+<td>4000K ~ 4700K
+</td></tr>
+<tr>
+<td>indoor</td>
+<td>3000K ~ 5000K
+</td></tr>
+<tr>
+<td>daylight</td>
+<td>5500K ~ 6500K
+</td></tr>
+<tr>
+<td>cloudy</td>
+<td>7000K ~ 8500K
+</td></tr>
+<tr>
+<td>custom</td>
+<td>Custom range, set via tuning file
+</td></tr></tbody></table>
+<p>Example: <font style="color:grey; font-style:italic"> libamera-still -o test.jpg --awb tungsten </font>
+</p>
+<pre>--awbgains #Set a fixed color gain &lt;number,number&gt;
+</pre>
+<p>Set red and blue gain. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-still -o test.jpg --awbgains 1.5, 2.0</font>
+</p>
+<pre>--denoise #Set denoising mode &lt;string&gt;
+</pre>
+<p>Supported denoising modes:
+</p>
+<ul><li>auto - default mode, use standard spatial denoising, if it is 
+video, it will use fast color noise reduction and use high-quality color
+ noise reduction when taking still pictures. The preview image will not 
+use any color denoising.</li>
+<li>off - turn off spatial denoising and color denoising</li>
+<li>cdn_off - turn off color denoising</li>
+<li>cdn_fast - use fast color denoising</li>
+<li>cdn_hq - use high-quality color denoising, not suitable for video recording.</li></ul>
+<p>Example: <font style="color:grey; font-style:italic">libcamera-vid -o test.h264 --denoise cdn_off</font>
+</p>
+<pre>--tuning-file #Specify camera tuning file &lt;string&gt;
+</pre>
+<p>For more instructions on tuning files, you can refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://datasheets.raspberrypi.com/camera/raspberry-pi-camera-guide.pdf">official tutorial</a> <br>
+Example: <font style="color:grey; font-style:italic">libcamera-hello --tuning-file ~/my~camera-tuning.json </font>
+</p>
+<pre>--autofocus-mode			Specify the autofocus mode &lt;string&gt;
+</pre>
+<p>Set the autofocus mode.<br>
+</p>
+<ul><li>default - By default, the camera will use continuous autofocus 
+mode, unless --lens-position or --autofocus-on-capture manual focus is 
+set</li>
+<li>manual - manual focus mode, the focus position can be set by --lens-position</li>
+<li>auto - focus will only be done once when the camera is turned on, 
+and will not be adjusted in other cases. (If you use the libcamera-still
+ command, only when --autofocus-on-capture is used, it will focus once 
+before taking a photo)</li>
+<li>continuous - The camera will automatically adjust the focus position according to the scene changes</li></ul>
+<pre>--autofocus-range   Specify the autofocus range &lt;string&gt;
+</pre>
+<p>Set the autofocus range.<br>
+</p>
+<ul><li>normal -- the default item, from nearest to infinity</li>
+<li>macro - macro mode, only focus on nearby objects.</li>
+<li>full - full distance mode, adjusted to infinity for the closest object</li></ul>
+<pre>--autofocus-speed   Specify the autofocus speed &lt;string&gt;
+</pre>
+<p>Set the focus speed.<br>
+</p>
+<ul><li>normal - default item, normal speed</li>
+<li>fast - fast focus mode</li></ul>
+<pre>--autofocus-window   --autofocus-window
+</pre>
+<p>To display the focus window, you need to set x, y, width, height, and
+ the coordinate value setting is based on the ratio of the image. For 
+example <b>--autofocus-window 0.25,0.25,0.5,0.5</b> would set a window half the size of the image and centered.<br>
+</p>
+<pre>--lens-position	    Set the lens to a given position &lt;string&gt;
+</pre>
+<p>Set the focus position.<br>
+</p>
+<ul><li>0.0 -- set the focus position to infinity</li>
+<li>number -- set the focus position to 1/number number is any value you
+ set, for example, if you set 2, it means that it will focus on the 
+position of 0.5m</li>
+<li>default -- focus to the default position relative to the hyperfocal distance of the lens</li></ul>
+<pre>--output, -o #output file name &lt;string&gt;
+</pre>
+<p>Set the filename of the output image or video. In addition to setting
+ the file name, you can also specify the output udp or tcp server 
+address to output the image to the server. If you are interested, you 
+can check the relevant setting instructions of the subsequent tcp and 
+udp. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-vid -t 100000 -o test.h264</font>
+</p>
+<pre>--wrap #Wrap the output file counter &lt;number&gt;
+</pre>
+<p>Example: <font style="color:grey; font-style:italic">libcamera-vid -t 0 --codec mjpeg --segment 1 --wrap 100 -o image%d.jpg </font>
+</p>
+<pre>--flush # Flush the output file immediately
+</pre>
+<p>--flush will immediately update each frame of the image to the hard disk at the same time as it is written, reducing latency. <br>
+Example: <font style="color:grey; font-style:italic">libcamera-vid -t 10000 --flush -o test.h264</font>
+</p>
+<h3><span class="mw-headline" id="Still_Photo_Shooting_Setting_Parameters"><b>Still Photo Shooting Setting Parameters</b></span></h3>
+<pre>--qiality, -q            #Set JPEG image quality &lt;0 ~ 100&gt;
+--exif, -x               #Add extra EXIF flags
+--timelapse              #Time interval of time-lapse photography, the unit is ms
+--framestart             #Start value of frame count
+--datetime               #Name output file with date format
+--timestamp              #Name the output file with the system timestamp
+-- restart               #Set the JPEG restart interval
+--keypress, -k           #Set the enter button photo mode
+--signal, -s             #Set the signal to trigger the photo
+--thumb                  #Set thumbnail parameters &lt;w:h:q&gt;
+--ebcoding, -e           #Set the image encoding type. jpg/png/bmp/rgb/yuv420
+--raw, -r                #Save raw image
+--latest                 #Associate symbols to the latest saved file
+--autofocus-on-capture   #Set to do a focus action before taking a photo
+</pre>
+<h3><span class="mw-headline" id="Video_Recording_Image_Setting_Parameters"><b>Video Recording Image Setting Parameters</b></span></h3>
+<pre>--quality, -q   #Set JPEG commands &lt;0 - 100&gt;
+--bitrate, -b   #Set H.264 bitrate
+--intra, -g     #Set the internal frame period (only supports H.264)
+--profile       #Set H.264 configuration
+--level         #Set H.264 level
+--codec         #Set encoding type h264 / mjpeg / yuv420
+--keypress, -k  #Set carriage return to pause and record
+--signal, -s    #Set signal pause and record
+--initial       #Start the program in the recording or paused state
+--split         #Split video and save to another file
+--segment       #Split video into multiple video segments
+--circular      #Write video to circular buffer
+--inline        #Write header in each I frame (H.264 only)
+--listen        #Wait for a TCP connection
+--frames        #Set the number of frames recorded
+</pre>
+<ul><li>For more camera setup instructions, please refer to the official documentation <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.raspberrypi.com/documentation/accessories/camera.html#libcamera-and-libcamera-apps">Official camera documentation</a>.</li></ul>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Introduction_2">Introduction</span></h2>
+<p>If you are using the Buster version of the image, the Raspicam driver
+ is installed by default in the system, you can directly turn on the 
+camera and use it.<br>
+If you are using the latest Bullseye system, you need to install and configure it separately.<br>
+</p>
+<h2><span id="Install_Raspicam_(optional)"></span><span class="mw-headline" id="Install_Raspicam_.28optional.29">Install Raspicam (optional)</span></h2>
+<p>Open the Raspberry Pi terminal, and enter the following command to install the driver. <font color="#FF0000"> Note: This driver cannot support a 64-bit Raspberry Pi system temporarily. </font>
+</p>
+<pre>sudo apt-get update
+cd
+sudo apt install cmake
+git clone https://github.com/raspberrypi/userland
+cd userland
+./buildme
+cp build/bin/* ~/bin/
+</pre>
+<p>After following the need to restart the system.
+</p>
+<pre>sudo reboot
+</pre>
+<h2><span class="mw-headline" id="Call_camera_2">Call camera</span></h2>
+<h3><span class="mw-headline" id="raspistill"><b>raspistill</b></span></h3>
+<p>The raspistill command is used to take still pictures.
+Example: <font style="color:grey; font-style:italic">raspistill -o cam.jpg</font>
+</p>
+<h3><span class="mw-headline" id="raspivid"><b>raspivid</b></span></h3>
+<p>The raspivid command is used to record video.
+Example: <font style="color:grey; font-style:italic">raspivid -o vid.h264</font>
+</p>
+<h3><span class="mw-headline" id="raspiyuv"><b>raspiyuv</b></span></h3>
+<p>The raspiyuv command has the same function as raspisitll, the 
+difference is that raspiyuv is not Su Chu. jpgs and other standard image
+ files, but generate YUV420 or RGB888 image files from the camera's ISP 
+output. <br>
+In most cases, it is better to use raspistill to capture images, but if 
+you want to use uncompressed black and white images, you can choose to 
+use the raspiyuv command.
+Example: <font style="color:grey; font-style:italic">raspiyuv -o cam.jpg</font>
+</p>
+<h3><span class="mw-headline" id="Instruction_Setting_Options"><b>Instruction Setting Options</b></span></h3>
+<p>When the raspicam command is used, the final imaging effect can be 
+adjusted by setting options. The available setting options are listed 
+below for reference. <br>
+</p>
+<pre>--preview, -p #Set the preview window &lt;x, y, w, h&gt;
+</pre>
+<p>The user can set the position of the preview window by setting the 
+values ​​of x and y,  and adjust the resolution of the preview image by 
+setting the values ​​of w and h.
+</p>
+<pre>--fullscreen, -f #Fullscreen preview window
+</pre>
+<p>Display the preview window in full screen.
+</p>
+<pre>--nopreview, -n #Do not display the preview window
+</pre>
+<p>Close the preview window and the command will output the image or video directly to a file.
+</p>
+<pre>--opacity, -op #Set the transparency of the preview window
+</pre>
+<p>Set the transparency of the preview window, 0 is invisible, and 255 is fully transparent.
+</p>
+<pre>--sharpness, -sh #Set image sharpness (-100 - 100)
+</pre>
+<p>The default sharpening value is 0.
+</p>
+<pre>--contrast. -co #Set image contrast (-100 - 100)
+</pre>
+<p>The default contrast is 0.
+</p>
+<pre>--brightness, -br #Set image contrast (0 - 100)
+</pre>
+<p>The default brightness is 50, 0 is fully black, and 100 is full white.
+</p>
+<pre>--saturation, -sa #Set image saturation (-100 - 100)
+</pre>
+<p>The default saturation is 0.
+</p>
+<pre>--ISO #Set shutter sensitivity (100 - 800)
+</pre>
+<p>Set sensitivity when taking pictures.
+</p>
+<pre>--vstab, -vs #Enable video stabilization
+</pre>
+<p>Only the video recording mode is valid, and video stabilization is enabled.
+</p>
+<pre>--ev #Set EV compensation
+</pre>
+<p>Set the EV compensation value of the image to default 0.
+</p>
+<pre>--exposure, -ex #Set exposure mode
+</pre>
+<p>Settable exposure options:<br>
+</p>
+<ul><li>auto: automatic exposure mode</li>
+<li>night: night shooting mode</li>
+<li>nightpreview</li>
+<li>backlight: backlight mode</li>
+<li>spotlight</li>
+<li>sports: sports mode (the shutter time will be shortened in sports mode)</li>
+<li>snow: snow mode</li>
+<li>beach: beach mode</li>
+<li>verylong: long exposure mode</li>
+<li>fixedfps: fixed fps</li>
+<li>antishake: anti-shake mode</li>
+<li>fireworks: fireworks mode</li></ul>
+<p>Note: Depending on the camera model, some modes are not available.
+</p>
+<pre>--flicker, -fli #Flicker avoidance
+</pre>
+<p>Modes that can be set:
+</p>
+<ul><li>off: turn off anti-flicker mode</li>
+<li>auto: auto-detect betting frequency</li>
+<li>50Hz: set the anti-flicker frequency to 50Hz</li>
+<li>60Hz: set the anti-flicker frequency to 60Hz</li></ul>
+<pre>--awb, #Set auto white balance mode
+</pre>
+<ul><li>off: disable auto white balance</li>
+<li>auto: Auto white balance mode (default)</li>
+<li>sun: sunny mode (5000K ~ 6500K)</li>
+<li>cloud: cloudy mode (6500K ~ 12000K)</li>
+<li>shade: shadow mode</li>
+<li>tungsten: Tungsten mode (2500K ~ 3500K)</li>
+<li>incandescent: Incandescent mode (2500K ~ 4500K)</li>
+<li>flash: flash mode</li>
+<li>horizon: horizon mode</li>
+<li>greyworld: If you are using a camera without an IR filter (eg NoIR),
+ you can fix the white balance misalignment caused by the lack of an IR 
+filter</li></ul>
+<p>Note: Depending on the camera model, some modes are not available.
+</p>
+<pre>--imfx, -ifx #Set image filter effect
+</pre>
+<p>Configurable image filter effects:
+</p>
+<ul><li>none: no effect (default)</li>
+<li>negative: color flip</li>
+<li>solarise: sunlight effect</li>
+<li>posterise: poster effect</li>
+<li>whiteboard: whiteboard effect</li>
+<li>backboard: blackboard effect</li>
+<li>sketch: sketch</li>
+<li>denoise: denoise</li>
+<li>emboss: emboss</li>
+<li>oilpaint: oil painting</li>
+<li>hatch: texture</li>
+<li>gpen: pencil sketch</li>
+<li>pastel: colored pencils</li>
+<li>watercolour: watercolor</li>
+<li>film: film</li>
+<li>blur: blur</li>
+<li>saturation: saturation</li></ul>
+<p>Note: Depending on the camera model, some modes are not available.
+</p>
+<pre>--colfx, -cfx #Set color effect &lt;U:V&gt;
+</pre>
+<p>The setting range of the U and V parameters is 0 ~ 255, which are 
+used to adjust the values ​​of the U and Y channels. For example <font style="color:grey; front-style:italic">--colfx 128:128</font> will set the image to monochrome.
+</p>
+<pre>--metering, -mm #Set metering mode
+</pre>
+<p>Settable options:
+</p>
+<ul><li>Average: average or full frame metering</li>
+<li>spot: spot metering</li>
+<li>backlit: preset a backlit image</li>
+<li>matrix: matrix metering</li></ul>
+<pre>--rotation, -rot #Set image rotation (0 - 359)
+</pre>
+<p>The image rotation angle can be set by the angle parameter.
+</p>
+<pre>--hflip, -hf #Set the image to flip horizontally
+</pre>
+<p>Set the image to be flipped horizontally.
+</p>
+<pre>--vflip, -vf #Set the image to flip vertically
+</pre>
+<p>Flip the image vertically.
+</p>
+<pre>--roi, #Crop image &lt;x, y, w, h&gt;
+</pre>
+<p>Crop the image according to the parameters, note that the parameters 
+are all planned in (0,0 ~ 1.0), for example, if you want to crop 1/4 of 
+the image, you can use the command <font style="color:grey; font-style:italic">- roi 0.5,0.5,0.25,0.25. </font>
+</p>
+<pre>--shutter, --ss set shutter speed/time
+</pre>
+<p>Set the shutter time (unit: ms). Shutter time The maximum shutter 
+time that can be set is different depending on the photosensitive chip. <br>
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Model</th>
+<th>Max Digit (ms)
+</th></tr>
+<tr>
+<td>V1 (OV5647)</td>
+<td>6000000 (6s)
+</td></tr>
+<tr>
+<td>V2 (IMX219)</td>
+<td>10000000 (10s)
+</td></tr>
+<tr>
+<td>HQ (IMX477</td>
+<td>200000000 (200s)
+</td></tr></tbody></table>
+<pre>--drc, -drc #Enable/disable dynamic range compression
+</pre>
+<ul><li>off (default)</li>
+<li>low</li>
+<li>med</li>
+<li>high</li></ul>
+<pre>--stats, -st #Statistics images by static image frames
+</pre>
+<pre>--awbgains, -awbg
+</pre>
+<p>Set blue and green gain, which takes effect if --awb off is set.
+</p>
+<pre>--analoggain, -ag
+</pre>
+<p>Set the analog gain value
+</p>
+<pre>--digitalgain, -dg
+</pre>
+<p>Set digital gain value
+</p>
+<pre>--mode, -md
+</pre>
+<p>Set sensor mode:
+</p>
+<ul><li>OV5647</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<th>Mode</th>
+<th>Resolution</th>
+<th>Aspect Ratio</th>
+<th>Frame Rate</th>
+<th>FoV
+</th></tr>
+<tr>
+<td>0</td>
+<td>Automatic selection</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>1</td>
+<td>1920 x 1080</td>
+<td>16:9</td>
+<td>1-30fps</td>
+<td>Partial
+</td></tr>
+<tr>
+<td>2</td>
+<td>2592 x 1944</td>
+<td>4:3</td>
+<td>1-15fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>3</td>
+<td>2592 x 1944</td>
+<td>4:3</td>
+<td>0.1666 - 1fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>4</td>
+<td>1296 x 972</td>
+<td>4:3</td>
+<td>1 - 42fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>5</td>
+<td>1296 x 730</td>
+<td>16:9</td>
+<td>1- 49fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>6</td>
+<td>640 x 480</td>
+<td>4:3</td>
+<td>42.1 - 60fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>7</td>
+<td>640 x 480</td>
+<td>4:3</td>
+<td>60.1 - 90fps</td>
+<td>Full Frame
+</td></tr></tbody></table>
+<ul><li>IMX219</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<th>Mode</th>
+<th>Resolution</th>
+<th>Aspect Ratio</th>
+<th>Frame Rate</th>
+<th>FoV
+</th></tr>
+<tr>
+<td>0</td>
+<td>Automatic selection</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>1</td>
+<td>1920 x 1080</td>
+<td>16:9</td>
+<td>0.1-30fps</td>
+<td>Partial
+</td></tr>
+<tr>
+<td>2</td>
+<td>3280 x 2464</td>
+<td>4:3</td>
+<td>0.1-15fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>3</td>
+<td>3280 x 2464</td>
+<td>4:3</td>
+<td>0.1 - 15fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>4</td>
+<td>1640 x 972</td>
+<td>4:3</td>
+<td>1 - 42fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>5</td>
+<td>1296 x 730</td>
+<td>16:9</td>
+<td>1- 49fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>6</td>
+<td>640 x 480</td>
+<td>4:3</td>
+<td>42.1 - 60fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>7</td>
+<td>640 x 480</td>
+<td>4:3</td>
+<td>60.1 - 90fps</td>
+<td>Full Frame
+</td></tr></tbody></table>
+<ul><li>HQ Camera</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<th>Mode</th>
+<th>Resolution</th>
+<th>Aspect Ratio</th>
+<th>Frame Rate</th>
+<th>FoV
+</th></tr>
+<tr>
+<td>0</td>
+<td>Automatic selection</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>1</td>
+<td>2028 x 1080</td>
+<td>169:90</td>
+<td>0.1-50fps</td>
+<td>Partial
+</td></tr>
+<tr>
+<td>2</td>
+<td>2028 x 1080</td>
+<td>4:3</td>
+<td>0.1-50fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>3</td>
+<td>4056 x 3040</td>
+<td>4:3</td>
+<td>0.005 - 10fps</td>
+<td>Full Frame
+</td></tr>
+<tr>
+<td>4</td>
+<td>1332 x 990</td>
+<td>74:55</td>
+<td>50.1-120 fps</td>
+<td>Partial
+</td></tr></tbody></table>
+<pre>--camselect, -cs
+</pre>
+<p>When multiple cameras are connected to the system, select camera, 0 or 1.
+</p>
+<pre>--annotate, -a #enable/set annotations
+</pre>
+<p>The parameters are represented by bit masks in the metadata, which 
+can be directly represented by addition. For example, 12 can represent 
+the display time (4) and the display date (8), which is represented by 
+the addition of 4+8 =12. <br>
+Configurable options
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Value</th>
+<th>Parameter description
+</th></tr>
+<tr>
+<td>-a 4</td>
+<td>Time
+</td></tr>
+<tr>
+<td>-a 8</td>
+<td>Date
+</td></tr>
+<tr>
+<td>-a 12</td>
+<td>Time and date, actually 4 + 8
+</td></tr>
+<tr>
+<td>-a 16</td>
+<td>Shutter setting
+</td></tr>
+<tr>
+<td>-a 32</td>
+<td>CAF settings
+</td></tr>
+<tr>
+<td>-a 64</td>
+<td>Gain setting
+</td></tr>
+<tr>
+<td>-a 128</td>
+<td>Lens settings
+</td></tr>
+<tr>
+<td>-a 256</td>
+<td>Animation settings
+</td></tr>
+<tr>
+<td>-a 512</td>
+<td>Number of frames
+</td></tr>
+<tr>
+<td>-a 1024</td>
+<td>Black background
+</td></tr>
+<tr>
+<td>-a "ABC %Y-%m-%d %X"</td>
+<td>Display text
+</td></tr>
+<tr>
+<td>-a 4 -a "ABC %Y-%m-%d %X"</td>
+<td>Display time/date in custom format
+</td></tr>
+<tr>
+<td>-a 8 -a "ABC %Y-%m-%d %X"</td>
+<td>Display time/date in custom format
+</td></tr></tbody></table>
+<pre>--annotateex, -ae #Set additional annotation parameters
+</pre>
+<pre>--stereo, -3d
+</pre>
+<p>Set the binocular mode.
+</p>
+<ul><li>sbs - side-by-side mode</li>
+<li>tb: - Portrait mode</li>
+<li>off - turn off binocular mode (default)</li></ul>
+<pre>--decimate, -dec
+</pre>
+<p>Halve the width and height of the binocular image.
+</p>
+<pre>--setting, -set
+</pre>
+<p>Output current camera settings.
+</p>
+<h3><span class="mw-headline" id="raspistill_setting_parameters"><b>raspistill setting parameters</b></span></h3>
+<pre>--width, -w         #Set image width
+--height, -h        #Set image height
+--quality, 0q       #Set JPEG quality &lt;0 ~ 100&gt;
+--raw, -r           #Add raw Bayer data to JPEG metadata
+--output, -o        #Output file &lt;filename&gt;
+--latest, -l        #Associate the last frame image to the file &lt;filename&gt;
+--verbose, -v       #Print details
+--timeout, -t       #Set the program preview time
+--timelapse, -tl    #Set up demo photography
+--framestart, -fs   #Save the number of the first frame
+--datetime, -dt     #Name the file with DateTime
+--timestamp, -ts    #Name files with timestamps
+--thumb, -th        #Set thumbnail parameters &lt;x:y:quility&gt;, the default is (64:48:35)
+--demo, -d          #Run demo mode &lt;ms"
+--encoding, -e      #Encode according to the specified format, jpg, BMP, or png
+--restart, -rs      #Set JPEG restart flag
+--exif, -x          #Set EXIF ​​flag
+--gpsdexif, -gps    #Set real-time Exif time (requires GPS Dongle access)
+--fullpreview, -fg  #Fullscreen preview
+--keypress, -k      #Keypress camera mode
+--signal, -s        #Signal mode
+--burst, -bm        #Snapshot mode
+</pre>
+<h3><span class="mw-headline" id="raspivid_setting_parameters"><b>raspivid setting parameters</b></span></h3>
+<pre>--width, -w         #Set the video width
+--height, -h        #Set the video height
+--bitrate, -b       #Set bitrate
+--output, -o        #Set the output filename &lt;filename&gt;
+--listen, -l        #When using a network connection, wait for a network connection
+--versbose, -v      #Print details
+--timeout, -t       #Set preview time
+--demo, -d          #Run demo &lt;ms&gt;
+--framerate, -fs    #Set frame rate
+--penc, -e          #Display the encoded preview image
+--intra, -g         #Set the internal refresh cycle
+--qp, -qp           #Set quantization parameters
+--profile, -pf      #Specify H264 profile, baseline/main/high
+--level, -lev       #Set H264 encoding level
+--irefresh, -if     #Set H264 internal refresh type cyclic/adaptive/both/cyclicrows
+--inline, -ih       #Insert PPS, SPS header
+--spstimings, -stm  #Insert timing information into SPS blocks
+--timed, -td        #Timed switch recording and pause function
+--keypress, -k      #Keypress to pause recording
+--signal, -s        #Switch pause and record state according to SIGUSR1
+--split, -sp        #In signal and keypress mode, the file will be recreated every time you re-record
+--vectors, -x       #Vector output
+--flush, -fl        #Force the output data buffer to be flushed immediately after writing video data, bypassing any OS cache for written data and reducing latency.
+--save-pts, -pts    #Save timestamp information to the specified file.
+--codec, -cd        #Specify encoder H264 / MJPEG
+--initial, -i       #Set the initial state of startup
+--segment, -sg      #Split video stream into multiple files
+--wrap, -wr         #Set the maximum value of the split
+--start, -sn        #Set the initial split encoding
+--raw, -r           #Set metadata file name
+--raw-format, -rf   #Specify metadata format yuv/rgb/grey
+</pre>
+<h1><span class="mw-headline" id="Resources">Resources</span></h1>
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.waveshare.com/w/upload/6/61/RPi-Camera-User-Manual.pdf">User manual</a></li></ul>
+<h1><span class="mw-headline" id="FAQ">FAQ</span></h1>
+<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordion1">
+								<b>Question:</b>If the picture taken, the white balance effect is not normal?
+
+							</a>
+						</h4>
+					</div>
+					<div id="accordion1" class="panel-collapse collapse in">
+						<div class="panel-body">
+<div>&nbsp;<b>Answer:</b></div>
+<div>In different shooting environments, the white balance effect may 
+not be normal. Users can adjust the white balance parameters according 
+to the actual usage.<br>
+<p>The following opencv adjustment code is for reference only. (The code is shared by RPi Camera (G) users).<br>
+</p>
+<pre>import picamera
+import picamera.array
+import cv2
+from time import sleep
+import numpy as np
+
+def test_gcamera():   
+    cv2.namedWindow("img",0)
+    with picamera.PiCamera() as camera:
+        camera.resolution = (1920, 1080)
+        camera.awb_mode = 'off'
+        rg, bg = (1.8, 1.4)
+        camera.awb_gains = (rg, bg)
+        with picamera.array.PiRGBArray(camera) as output:
+            for foo in camera.capture_continuous(output, 'rgb', use_video_port=True):
+                img = cv2.cvtColor(output.array, cv2.COLOR_RGB2BGR)
+                cv2.imshow("img", img)
+                cv2.waitKey(1)
+                cv2.imwrite("test.jpg",img)
+                r, g, b = (np.mean(output.array[..., i]) for i in range(3))
+                if abs(r - g) &gt; 2:
+                    if r &gt; g:
+                        rg -= 0.1
+                    else:
+                        rg += 0.1
+                if abs(b - g) &gt; 1:
+                    if b &gt; g:
+                        bg -= 0.1
+                    else:
+                        bg += 0.1
+                camera.awb_gains = (rg, bg)
+                output.seek(0)
+                output.truncate(0)
+if __name__=="__main__":
+    test_gcamera()
+</pre>
+</div>
+<div style="display:none;"></div>
+<div style="display:none;"></div>
+<p><font style="display:none;" color="red">{{{5}}}</font>
+</p>
+						</div>
+					</div>
+				</div>
+</div>
+<p><br>
+</p>
+<h1><span class="mw-headline" id="Support">Support</span></h1>
+<p><font style="color:green; weight:bold;"><big><b>If you require technical support, please go to the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://support.waveshare.com/hc/en-us/requests/new">Support</a> page and open a ticket.</b></big></font>
+</p>
+</div>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20230223070458
+Cache expiry: 0
+Dynamic content: true
+Complications: []
+CPU time usage: 0.391 seconds
+Real time usage: 0.430 seconds
+Preprocessor visited node count: 993/1000000
+Post‐expand include size: 51680/2097152 bytes
+Template argument size: 2720/2097152 bytes
+Highest expansion depth: 8/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 15996/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   83.507      1 -total
+ 52.34%   43.711      1 Template:Infobox_item
+ 26.54%   22.159      1 Template:Product_List
+ 11.00%    9.182      1 Template:RPi_Camera_Libcamera_Guide
+  9.51%    7.942      1 Template:FAQ
+  9.18%    7.665      1 Template:RPI_Camera_Quick_Start
+  7.67%    6.401      1 Template:Ir-cut_camera_raspicam
+  5.09%    4.252      2 Template:Amazon_nolink
+  4.91%    4.104      1 Template:Service00
+  4.64%    3.875      1 Template:RPi_Camera_Raspicam_Guide
+-->
+</div></div>								<div class="printfooter">
+				Retrieved from "<a dir="ltr" href="https://www.waveshare.com/w/index.php?title=RPi_Camera_(G)&amp;oldid=52336">https://www.waveshare.com/w/index.php?title=RPi_Camera_(G)&amp;oldid=52336</a>"				</div>
+												<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.waveshare.com/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://www.waveshare.com/wiki/Category:Modules" title="Category:Modules">Modules</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="https://www.waveshare.com/wiki/Category:CSI_interface" title="Category:CSI interface">CSI interface</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+			<!-- /bodyContent -->
+		</div>
+						</div>
+				</div>
+			</div>
+			<!-- /content -->
+
+			<!-- sidebar-left -->
+			<div class="sidebar-wrapper sidebar-left-wrapper">
+				<div class="sidebar-container container">
+					<div class="row">
+						<div id="sidebar-left" class="col-md-2 col-md-offset-0">
+							<div id="tweekiTOC"><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading" style="display: table;"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+<ul class="nav">
+<li class="toclevel-1"><a href="#Hardware_Connection"><span class="tocnumber">1</span> <span class="toctext">Hardware Connection</span></a></li>
+<li class="toclevel-1"><a href="#About_the_model"><span class="tocnumber">2</span> <span class="toctext">About the model</span></a></li>
+<li class="toclevel-1"><a href="#Enable_Camera_Interface"><span class="tocnumber">3</span> <span class="toctext">Enable Camera Interface</span></a></li>
+<li class="toclevel-1"><a href="#Test_Camera.28Bullseyes_OS.29"><span class="tocnumber">4</span> <span class="toctext">Test Camera(Bullseyes OS)</span></a></li>
+<li class="toclevel-1"><a href="#Test_Camera.EF.BC.88Buster_OS.EF.BC.89"><span class="tocnumber">5</span> <span class="toctext">Test Camera（Buster OS）</span></a></li>
+<li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">6</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1"><a href="#Call_Camera"><span class="tocnumber">7</span> <span class="toctext">Call Camera</span></a>
+<ul class="nav">
+<li class="toclevel-2"><a href="#libcamera-hello"><span class="tocnumber">7.1</span> <span class="toctext"><b>libcamera-hello</b></span></a></li>
+<li class="toclevel-2"><a href="#libcamera-jpeg"><span class="tocnumber">7.2</span> <span class="toctext"><b>libcamera-jpeg</b></span></a></li>
+<li class="toclevel-2"><a href="#libcamera-still"><span class="tocnumber">7.3</span> <span class="toctext"><b>libcamera-still</b></span></a></li>
+<li class="toclevel-2"><a href="#libcamera-vid"><span class="tocnumber">7.4</span> <span class="toctext"><b>libcamera-vid</b></span></a></li>
+<li class="toclevel-2"><a href="#libcamera-raw"><span class="tocnumber">7.5</span> <span class="toctext"><b>libcamera-raw</b></span></a></li>
+<li class="toclevel-2"><a href="#Common_Command_Setting_Options"><span class="tocnumber">7.6</span> <span class="toctext"><b>Common Command Setting Options</b></span></a></li>
+<li class="toclevel-2"><a href="#Still_Photo_Shooting_Setting_Parameters"><span class="tocnumber">7.7</span> <span class="toctext"><b>Still Photo Shooting Setting Parameters</b></span></a></li>
+<li class="toclevel-2"><a href="#Video_Recording_Image_Setting_Parameters"><span class="tocnumber">7.8</span> <span class="toctext"><b>Video Recording Image Setting Parameters</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Introduction_2"><span class="tocnumber">8</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1"><a href="#Install_Raspicam_.28optional.29"><span class="tocnumber">9</span> <span class="toctext">Install Raspicam (optional)</span></a></li>
+<li class="toclevel-1"><a href="#Call_camera_2"><span class="tocnumber">10</span> <span class="toctext">Call camera</span></a>
+<ul class="nav">
+<li class="toclevel-2"><a href="#raspistill"><span class="tocnumber">10.1</span> <span class="toctext"><b>raspistill</b></span></a></li>
+<li class="toclevel-2"><a href="#raspivid"><span class="tocnumber">10.2</span> <span class="toctext"><b>raspivid</b></span></a></li>
+<li class="toclevel-2"><a href="#raspiyuv"><span class="tocnumber">10.3</span> <span class="toctext"><b>raspiyuv</b></span></a></li>
+<li class="toclevel-2"><a href="#Instruction_Setting_Options"><span class="tocnumber">10.4</span> <span class="toctext"><b>Instruction Setting Options</b></span></a></li>
+<li class="toclevel-2"><a href="#raspistill_setting_parameters"><span class="tocnumber">10.5</span> <span class="toctext"><b>raspistill setting parameters</b></span></a></li>
+<li class="toclevel-2"><a href="#raspivid_setting_parameters"><span class="tocnumber">10.6</span> <span class="toctext"><b>raspivid setting parameters</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-1"><a href="#Resources"><span class="tocnumber">11</span> <span class="toctext">Resources</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#FAQ"><span class="tocnumber">12</span> <span class="toctext">FAQ</span></a></li>
+<li class="toclevel-1"><a href="#Support"><span class="tocnumber">13</span> <span class="toctext">Support</span></a></li>
+</ul>
+<div id="toctotop"><a href="javascript:scrollTo(0,0);">To Top</a></div></div></div>						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /sidebar-left -->
+					<!-- footer -->
+			<div id="footer" role="contentinfo" class="footer container footer-sticky bg-light" style="margin-top: 0px; opacity: 1;">
+			<ul id="footer-custom"><li class="dropup"><a href="https://www.waveshare.com/w/index.php?title=Special:UserLogin&amp;returnto=RPi+Camera+%28G%29" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey="o">Login / Create Account</a></li></ul><div style="clear:both"></div>			</div>
+			<!-- /footer -->
+		
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.391","walltime":"0.430","ppvisitednodes":{"value":993,"limit":1000000},"postexpandincludesize":{"value":51680,"limit":2097152},"templateargumentsize":{"value":2720,"limit":2097152},"expansiondepth":{"value":8,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":15996,"limit":5000000},"timingprofile":["100.00%   83.507      1 -total"," 52.34%   43.711      1 Template:Infobox_item"," 26.54%   22.159      1 Template:Product_List"," 11.00%    9.182      1 Template:RPi_Camera_Libcamera_Guide","  9.51%    7.942      1 Template:FAQ","  9.18%    7.665      1 Template:RPI_Camera_Quick_Start","  7.67%    6.401      1 Template:Ir-cut_camera_raspicam","  5.09%    4.252      2 Template:Amazon_nolink","  4.91%    4.104      1 Template:Service00","  4.64%    3.875      1 Template:RPi_Camera_Raspicam_Guide"]},"cachereport":{"timestamp":"20230223070458","ttl":0,"transientcontent":true}}});mw.config.set({"wgBackendResponseTime":810});});</script>	
+
+</body></html>
